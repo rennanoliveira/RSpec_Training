@@ -8,15 +8,16 @@ class Output
   end
 end
 
-def output
-  @output ||= Output.new
-end
+#def output
+#  @output ||= Output.new
+#end
 
 Given(/^I am not yet playing$/) do
 end
 
 Given(/^the secret code is "([^\"]*)"$/) do |secret|
-  @game = Codebreaker::Game.new(output)
+  @output = Output.new
+  @game = Codebreaker::Game.new(@output)
   @game.start(secret)
 end
 
@@ -24,7 +25,8 @@ end
 
 
 When(/^I start a new game$/) do
-	game = Codebreaker::Game.new(output)
+	@output = Output.new
+	game = Codebreaker::Game.new(@output)
 	game.start('1234')
 end
 
@@ -41,5 +43,5 @@ end
 
 
 Then(/^the mark should be "([^\"]*)"$/) do |mark|
-  output.messages.should include(mark)
+  @output.messages.should include(mark)
 end
