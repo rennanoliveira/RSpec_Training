@@ -6,8 +6,8 @@ module Codebreaker
     end
 
     def start(secret)
-	    /puts @output.class/ 
-	    /puts @output.instance_methods/
+	    #/puts @output.class/ 
+	    #/puts @output.instance_methods/
 	    @output.puts 'Welcome to Codebreaker!' 
 	    @output.puts 'Enter guess:' 
 	end
