@@ -7,9 +7,9 @@ class Output
   end
 end
 
-def output
-  @output ||= Output.new
-end
+#def output
+#  @output ||= Output.new
+#end
 
 Given(/^I am not yet playing$/) do
 end
@@ -23,7 +23,8 @@ end
 
 
 When(/^I start a new game$/) do
-	game = Codebreaker::Game.new(output)
+	@output = Output.new
+	game = Codebreaker::Game.new(@output)
 	game.start('1234')
 end
 
