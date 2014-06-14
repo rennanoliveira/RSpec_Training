@@ -26,8 +26,8 @@ end
 
 When(/^I start a new game$/) do
 	@output = Output.new
-	game = Codebreaker::Game.new(@output)
-	game.start('1234')
+	@game = Codebreaker::Game.new(@output)
+	@game.start('1234')
 end
 
 When(/^I guess "([^\"]*)"$/) do |guess|
