@@ -1,18 +1,19 @@
-
 module Codebreaker
-	class Game
-		def initialize(output)
-			@output = output
-		end
-		
-		def start(secret)
-			@output.puts 'Welcome to Codebreaker!'
-			@output.puts 'Enter guess:'
-		end
+  class Game
+  	attr_reader :output
+    def initialize(output)
+      @output = output
+    end
 
-		def guess(guess)
-			@output.class
-			@output.puts ''
-		end
+    def start(secret)
+	    /puts @output.class/ 
+	    /puts @output.instance_methods/
+	    @output.puts 'Welcome to Codebreaker!' 
+	    @output.puts 'Enter guess:' 
 	end
+
+    def guess(guess)
+      @output.puts ''
+    end
+  end
 end

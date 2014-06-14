@@ -1,5 +1,4 @@
 class Output
-  public
   def messages
     @messages ||= []
   end
@@ -16,7 +15,7 @@ Given(/^I am not yet playing$/) do
 end
 
 Given(/^the secret code is "([^\"]*)"$/) do |secret|
-  @game = Codebreaker::Game.new(output)
+  @game = Codebreaker::Game.new(Output.new)
   @game.start(secret)
 end
 
@@ -41,5 +40,5 @@ end
 
 
 Then(/^the mark should be "([^\"]*)"$/) do |mark|
-  output.messages.should include(mark)
+  @output.messages.should include(mark)
 end
